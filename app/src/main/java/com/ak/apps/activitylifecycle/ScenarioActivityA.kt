@@ -2,8 +2,10 @@ package com.ak.apps.activitylifecycle
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
+import android.view.MenuItem
 import android.view.View
 import com.ak.apps.activitylifecycle.databinding.ActivityScenarioABinding
 
@@ -33,6 +35,8 @@ class ScenarioActivityA : AppCompatActivity() {
             }
 
             3 -> {
+                val actionBar = supportActionBar
+                actionBar?.setDisplayHomeAsUpEnabled(true)
                 activityScenarioBinding.scenario3Container.visibility = View.VISIBLE
             }
         }
@@ -99,6 +103,13 @@ class ScenarioActivityA : AppCompatActivity() {
         super.onRestoreInstanceState(savedInstanceState)
         Log.i(TAG, "onRestoreInstanceState()")
         ToastUtils.showToast(this, TAG + ": onRestoreInstanceState()")
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        if (item?.itemId == android.R.id.home) {
+            finish()
+        }
+        return super.onOptionsItemSelected(item)
     }
 
 }
