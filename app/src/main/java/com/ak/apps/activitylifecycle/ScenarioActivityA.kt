@@ -26,9 +26,14 @@ class ScenarioActivityA : AppCompatActivity() {
             1 -> {
                 activityScenarioBinding.scenario1Container.visibility = View.VISIBLE
             }
+
             2 -> {
                 activityScenarioBinding.scenario2Container.visibility = View.VISIBLE
                 finish()
+            }
+
+            3 -> {
+                activityScenarioBinding.scenario3Container.visibility = View.VISIBLE
             }
         }
 

@@ -17,6 +17,7 @@ class ScenarioListActivity : AppCompatActivity(), View.OnClickListener {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_scenario_list)
         binding.scenario1CardVw.setOnClickListener(this)
         binding.scenario2CardVw.setOnClickListener(this)
+        binding.scenario3CardVw.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
@@ -29,6 +30,11 @@ class ScenarioListActivity : AppCompatActivity(), View.OnClickListener {
 
             R.id.scenario2_card_vw -> {
                 intent.putExtra(SCENARIO_NO, 2)
+                startActivity(intent)
+            }
+
+            R.id.scenario3_card_vw -> {
+                intent.putExtra(SCENARIO_NO, 3)
                 startActivity(intent)
             }
         }
